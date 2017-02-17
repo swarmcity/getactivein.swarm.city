@@ -1,0 +1,26 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/ac-app.html",
+  "fragments": [
+    "src/ac-vault.html",
+    "src/ac-web3.html",
+    "src/ac-profile.html",
+    "src/ac-wallet.html",
+    "src/ac-walletview.html",
+    "src/ac-home.html",
+    "src/ac-swtconversion.html"
+  ],
+  "sourceGlobs": [
+   "src/**/*",
+   "src/*",
+   "images/**/*",
+   "bower.json"
+  ],
+  "includeDependencies": [
+    "manifest.json",
+    "bower.json",
+    "bower_components/sc-style/sc-fonts/*.otf",
+    "src/contracts/*",
+    "bower_components/webcomponentsjs/webcomponents-lite.min.js"
+  ]
+}
