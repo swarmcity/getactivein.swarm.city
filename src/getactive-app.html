@@ -57,8 +57,8 @@
       }
 */
       .memberpic {
-        width: 40px;
-        height: 40px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         overflow: hidden;
         margin-right: 10px;
@@ -292,6 +292,9 @@
       padding-bottom: 12vh;
       padding-top: 4vh;
     }
+
+
+
     }
 
 
@@ -308,274 +311,61 @@
 
       <h1 class="centertxt hairline">Get active in Swarm City.</h1>
       <div class="fivespace"></div>
-      <p class="centertxt maxwidth grey3">Swarm City is an open network of different hives/teams, each with its specific focus and approach. All hives have one person who takes responsibility for that specific part of our great city.<br><br><span class="bold blue">You wanna contribute? Find your hive!</span></p>
+      <p class="centertxt maxwidth grey3">Swarm City is an open network of different hives/teams, each with its specific focus and approach. All hives have one person who takes responsibility for that specific part of our great city.<br><br><span class="bold blue">Would you like to contribute? Find your hive!</span></p>
     </div>
 
 
+      <template is="dom-repeat" items="{{content}}">
+      <!-- for developers -->
       <div class="team totalwidth horizont start centerjust wrap">
 
         <div class="totalwidth vertic centercenter part">
 
-          <p class="grey2 forwho">For developers</p>
+          <p class="grey2 forwho">{{item.title}}</p>
           <div class="minispace"></div>
-          <h2 class="ultralight hivetittle maxwidth centertxt"><span class="blue">The Dev Hive</span> creates the app and underlying technology.</h2>
+          <h2 class="ultralight hivetittle maxwidth centertxt"><span class="blue">{{item.who}}</span> {{item.what}}</h2>
           <div class="fivespace"></div>
 
           <div class="totalwidth vertic centercenter">
-
-              <div class="memberpic">
-                <img src="/images/stefaan.png">
-              </div>
-              <div class="whitespace"></div>
-            <div class="vertic centercenter">
-              <p class="centertxt small">Lead by <span class="semibold">Stefaan Ponnet</span></p>
-              <div class="minispace"></div>
-              <div class="findlink">
-              <a class="totalwidth centertxt horizont centercenter bold" href="https://swarm-slack-invite.herokuapp.com/">Find @sponnet on slack</a>
-            </div>
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="totalwidth vertic centercenter part lighter">
-
-          <p class="grey2 forwho">For businessmen</p>
-          <div class="minispace"></div>
-          <h2 class="ultralight hivetittle maxwidth centertxt"><span class="blue">The Bus Hive</span> manages business processes, finance, legal and organisation.</h2>
-          <div class="fivespace"></div>
-
-          <div class="totalwidth vertic centercenter">
-
-              <div class="memberpic">
-                <img src="/images/bernd.jpg">
-              </div>
-              <div class="whitespace"></div>
-            <div class="vertic centercenter">
-              <p class="centertxt small">Lead by <span class="semibold">Bernd Lapp</span></p>
-              <div class="minispace"></div>
-              <div class="findlink">
-              <a class="totalwidth centertxt horizont centercenter bold" href="https://swarm-slack-invite.herokuapp.com/">Find @bernd on slack</a>
-            </div>
-            </div>
-
-          </div>
-
-        </div>
-
-
-      <div class="totalwidth vertic centercenter part">
-
-          <p class="grey2 forwho">For communicators</p>
-          <div class="minispace"></div>
-          <h2 class="ultralight hivetittle maxwidth centertxt"><span class="blue">The Comm Hive</span> helps the swarm express the ideas and concept of Swarm City.</h2>
-          <div class="fivespace"></div>
-
-          <div class="totalwidth vertic centercenter">
-
             <div class="totalwidth horizont centercenter">
-              <div class="memberpic">
-                <img src="/images/matt.jpg">
-              </div>
-              <div class="memberpic">
-                <img src="/images/kris.jpg">
-              </div>
+            <template is="dom-repeat" items="{{item.members}}">
+            <div class="memberpic">
+              <img src="{{item.memberpic}}">
             </div>
-
-              <div class="whitespace"></div>
-            <div class="vertic centercenter">
-              <p class="centertxt small">Lead by <span class="semibold"> Matthew Carano and Kris Decoodt</span></p>
-              <div class="minispace"></div>
-              <div class="findlink">
-              <a class="totalwidth centertxt horizont centercenter bold" href="https://swarm-slack-invite.herokuapp.com/">Find matthewcarano or krrisis on slack</a>
-            </div>
-            </div>
-
-          </div>
-
+          </template>
         </div>
 
-      <div class="totalwidth vertic centercenter part lighter">
 
-          <p class="grey2 forwho">For designers and dreamers</p>
+          <div class="whitespace"></div>
+        <div class="vertic centercenter">
+          <p class="centertxt small">Lead by <span class="semibold"> {{item.leadby}}</span></p>
           <div class="minispace"></div>
-          <h2 class="ultralight hivetittle maxwidth centertxt"><span class="blue">The Concept Hive</span> takes the abstract of Swarm City and makes it visual.</h2>
-          <div class="fivespace"></div>
-
-          <div class="totalwidth vertic centercenter">
-
-            <div class="totalwidth horizont centercenter">
-              <div class="memberpic">
-                <img src="/images/faffy_diggins.png">
-              </div>
-              <div class="memberpic">
-                <img src="/images/michael-glass.png">
-              </div>
-            </div>
-
-              <div class="whitespace"></div>
-            <div class="vertic centercenter">
-              <p class="centertxt small">Lead by <span class="semibold">Faffy Diggins and King Flurkel</span></p>
-              <div class="minispace"></div>
-              <div class="findlink">
-              <a class="totalwidth centertxt horizont centercenter bold" href="https://swarm-slack-invite.herokuapp.com/">Find @faffy_dee or @kingflurkel on slack</a>
-            </div>
-            </div>
+          <div class="findlink">
+          <a class="totalwidth centertxt horizont centercenter bold" href="https://swarm-slack-invite.herokuapp.com/">Find {{item.find}} on slack</a>
+        </div>
+        </div>
 
           </div>
 
         </div>
+        <!-- end for developers -->
+      </template>
 
       <div class="totalwidth vertic centercenter whiteback paddingallround">
 
           <p class="bold maxwidth centertxt"><span class="blue">Didn't find what you were looking for?</span></p>
-              <div class="minispace"></div>
+          <div class="whitespace"></div>
+              <div class="totalwidth vertic centercenter">
+                <div class="totalwidth horizont centercenter">
+                <div class="memberpic">
+                  <img src="/images/kiki.png">
+                </div>
+            </div>
+            <div class="whitespace"></div>
+
           <p class="centertxt">Find us on Slack and talk to <span class="bold">@kikipluche</span>.</p>
 
         </div>
-<!--         <div class="teammember vertic centercenter">
-          <div class="membertxt centertxt">
-            <p class="bold blue">business hive</p>
-            <div class="whitespace"></div>
-            <p>business processes, finance, legal and organisation</p>
-            <div class="minispace"></div>
-          </div>
-          <div class="whitespace"></div>
-          <div class="memberpiccanvas">
-            <div class="memberpic">
-              <img src="/images/bernd.jpg">
-            </div>
-          </div>
-          <div class="whitespace"></div>
-          <p class="centertxt small">Lead by</p>
-          <div class="minispace"></div>
-          <h1 class="membername ultralight ">Bernd Lapp</h1>
-          <div class="whitespace"></div>
-      centercentervertic centercenter contactmember">
-            <div class="dotline"></div>
-            <div class="minispace"></div>
-            <div class="minispace"></div>
-              <a class="totalwidth horizcentertxt ont center starcenterf="https://swarm-slack-invite.herokuapp.com/">
-                <div class="contactlogo">
-                  <img src="/images/Slack_Mark_Web.png">
-                </div>
-                <p class="small grey4 semibold">@bernd</p>
-              </a>
-            <a class="totalwidth horizont center startjust" href="mailto:bernd@swarm.city">
-              <iron-icon icon="sc-icons:mail" class="mrgnright grey4"></iron-icon>
-              <p class="small grey4 semibold">bernd@swarm.city</p>
-            </a>
-          </div>
-        </div>
-
-        <div class="teammember vertic centercenter">
-          <div class="membertxt centertxt">
-            <p class="bold blue">concept hive</p>
-            <div class="whitespace"></div>
-            <p>creates and guards the overall vision of Swarm City</p>
-            <div class="minispace"></div>
-          </div>
-          <div class="whitespace"></div>
-          <div class="memberpiccanvas">
-            <div class="memberpic">
-              <img src="/images/michael-glass.png">
-            </div>
-          </div>
-          <div class="whitespace"></div>
-          <p class="centertxt small">Lead by</p>
-          <div class="minispace"></div>
-          <h1 class="membername ultralight ">King Flurkel</h1>
-          <div class="whitespace"></div>
-      centercentervertic centercenter contactmember">
-            <div class="dotline"></div>
-            <div class="minispace"></div>
-            <div class="minispace"></div>
-              <a class="totalwidth horizcentertxt ont center starcenterf="https://swarm-slack-invite.herokuapp.com/">
-                <div class="contactlogo">
-                  <img src="/images/Slack_Mark_Web.png">
-                </div>
-                <p class="small grey4 semibold">@kingflurkel</p>
-              </a>
-            <a class="totalwidth horizont center startjust" href="mailto:kingflurkel@swarm.city">
-              <iron-icon icon="sc-icons:mail" class="mrgnright grey4"></iron-icon>
-              <p class="small grey4 semibold">kingflurkel@swarm.city</p>
-            </a>
-          </div>
-        </div>
-
-        <div class="teammember vertic centercenter">
-          <div class="membertxt centertxt">
-            <p class="bold blue">development hive</p>
-            <div class="whitespace"></div>
-            <p>creates the app and underlying technology</p>
-            <div class="minispace"></div>
-          </div>
-          <div class="whitespace"></div>
-          <div class="memberpiccanvas">
-            <div class="memberpic">
-              <img src="/images/stefaan.png">
-            </div>
-          </div>
-          <div class="whitespace"></div>
-          <p class="centertxt small">Lead by</p>
-          <div class="minispace"></div>
-          <h1 class="membername ultralight ">Stefaan Ponnet</h1>
-          <div class="whitespace"></div>
-      centercentervertic centercenter contactmember">
-            <div class="dotline"></div>
-            <div class="minispace"></div>
-            <div class="minispace"></div>
-              <a class="totalwidth horizcentertxt ont center starcenterf="https://swarm-slack-invite.herokuapp.com/">
-                <div class="contactlogo">
-                  <img src="/images/Slack_Mark_Web.png">
-                </div>
-                <p class="small grey4 semibold">@sponnet</p>
-              </a>
-            <a class="totalwidth horizont center startjust" href="mailto:sponnet@swarm.city">
-              <iron-icon icon="sc-icons:mail" class="mrgnright grey4"></iron-icon>
-              <p class="small grey4 semibold">sponnet@swarm.city</p>
-            </a>
-          </div>
-        </div>
-
-
-        <div class="teammember vertic centercenter">
-          <div class="membertxt centertxt">
-            <p class="bold blue">swarm hive</p>
-            <div class="whitespace"></div>
-            <p>inspires, supports and guides the swarm</p>
-            <div class="minispace"></div>
-          </div>
-          <div class="whitespace"></div>
-          <div class="memberpiccanvas">
-            <div class="memberpic">
-              <img src="/images/christopherw.png">
-            </div>
-          </div>
-          <div class="whitespace"></div>
-          <p class="centertxt small">Lead by</p>
-          <div class="minispace"></div>
-          <h1 class="membername ultralight centertxt">Christopher Winston</h1>
-          <div class="whitespace"></div>
-      centercentervertic centercenter contactmember">
-            <div class="dotline"></div>
-            <div class="minispace"></div>
-            <div class="minispace"></div>
-              <a class="totalwidth horizcentertxt ont center starcenterf="https://swarm-slack-invite.herokuapp.com/">
-                <div class="contactlogo">
-                  <img src="/images/Slack_Mark_Web.png">
-                </div>
-                <p class="small grey4 semibold">@christopherwinston</p>
-              </a>
-            <a class="totalwidth horizont center startjust" href="mailto:christopherwinston@swarm.city">
-              <iron-icon icon="sc-icons:mail" class="mrgnright grey4"></iron-icon>
-              <p class="small grey4 semibold">christopherwinston@swarm.city</p>
-            </a>
-          </div>
-        </div> -->
-
 
 
       </div>
@@ -638,6 +428,57 @@
           type: String,
           value: 'getactive-app',
         },
+        content: {
+          type: Array,
+          value: [{ title: 'For designers and dreamers',
+                    who: 'The Concept Hive',
+                    what: 'creates the abstract of Swarm City and makes it a reality.',
+                    leadby: 'Faffy Diggins and King Flurkel',
+                    find: '@faffy_dee and @kingflurkel',
+                    members: [
+                      {membername: 'mike', memberpic: '/images/faffy_diggins.png'},
+                      {membername: 'mike', memberpic: '/images/michael.png'}],
+                    memberstxt: 'lorem ipsum'
+                },
+                { title: 'For developers',
+                          who: 'The Dev Hive',
+                          what: 'creates the app and underlying technology.',
+                          leadby: 'Stefaan Ponnet',
+                          find: '@sponnet',
+                          members: [
+                            {membername: 'mike', memberpic: '/images/stefaan.png'}],
+                          memberstxt: 'lorem ipsum'
+                      },
+                      { title: 'For communicators',
+                                who: 'The Comm Hive',
+                                what: 'helps the swarm express the ideas and concept of Swarm City.',
+                                leadby: 'Matthew Carano and Kris Decoodt',
+                                find: '@krrisis and @matt',
+                                members: [
+                                  {membername: 'mike', memberpic: '/images/matt.jpg'},
+                                  {membername: 'mike', memberpic: '/images/kris.jpg'}],
+                                memberstxt: 'lorem ipsum'
+                            },
+                            { title: 'For business people',
+                                      who: 'The Business Hive',
+                                      what: 'manages business processes, finance, legal, and organisation.',
+                                      leadby: 'Matthew Carano and Kris Decoodt',
+                                      find: '@bernd',
+                                      members: [
+                                        {membername: 'bernd', memberpic: '/images/bernd.jpg'}],
+                                      memberstxt: 'lorem ipsum'
+                                  },
+                      { title: 'For community organizers',
+                                who: 'The Support Hive',
+                                what: 'assists Swarm Citizens negotiate The City.',
+                                leadby: 'Jennifer Williams',
+                                find: '@jennwilliams',
+                                members: [
+                                  {membername: 'jenn', memberpic: '/images/jenn.png'}],
+                                memberstxt: 'lorem ipsum'
+                            },
+                    ]
+        }
       },
 
     });
