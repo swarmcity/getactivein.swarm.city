@@ -8,12 +8,12 @@
    "src/**/*",
    "src/*",
    "images/**/*",
-   "bower.json"
+   "bower.json",
+   "bower_components/sc-style/sc-fonts/*.otf"
   ],
   "includeDependencies": [
     "manifest.json",
     "bower.json",
-    "bower_components/sc-style/sc-fonts/*.otf",
     "bower_components/webcomponentsjs/webcomponents-lite.min.js"
   ]
 }
